@@ -1,7 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
     generateCaptcha();
+    loadDarkMode();
 });
 
+// Function to toggle Dark Mode
+function toggleDarkMode() {
+    let body = document.body;
+    body.classList.toggle("dark-mode");
+
+    // Store the user's preference in localStorage
+    if (body.classList.contains("dark-mode")) {
+        localStorage.setItem("dark-mode", "enabled");
+    } else {
+        localStorage.setItem("dark-mode", "disabled");
+    }
+}
+
+// Function to load Dark Mode preference
+function loadDarkMode() {
+    if (localStorage.getItem("dark-mode") === "enabled") {
+        document.body.classList.add("dark-mode");
+    }
+}
+
+// CAPTCHA Generation and Validation
 function generateCaptcha() {
     let num1 = Math.floor(Math.random() * 10) + 1; // Random number 1-10
     let num2 = Math.floor(Math.random() * 10) + 1; // Random number 1-10
@@ -36,5 +58,9 @@ function validateCaptcha() {
         generateCaptcha(); // Generate a new CAPTCHA on failure
         return false;
     }
-    return true;
+
+    // Show confirmation message
+    document.getElementById("confirmation-message").style.display = "block";
+
+    return true; // Form submits successfully
 }

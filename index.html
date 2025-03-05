@@ -1,12 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 <head>
-    <title>Noah Al Hadidi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noah Al Hadidi | Accessibility SME</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Welcome to My Portfolio</h1>
-    <p>More content coming soon.</p>
-    <script src="script.js"></script>
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" aria-current="page">English</a></li>
+                <li><a href="index-ar.html" lang="ar">العربية</a></li>
+            </ul>
+        </nav>
+        <img src="logo.png" alt="Noah Al Hadidi - Accessibility Expert Logo" class="site-logo">
+        <h1>Noah Al Hadidi</h1>
+        <p>Accessibility Subject Matter Expert | Web & App Accessibility | IAAP Certified</p>
+        <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="audits.html">Accessibility Audits</a></li>
+            <li><a href="media.html">Media & Recognition</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I'm Noah Al Hadidi, an Accessibility Subject Matter Expert with over 12 years of experience in WCAG 2.1 & Section 508 compliance.</p>
+            <a href="Noah_Al_Hadidi-CV-FEB-2025.docx" download>Download CV</a>
+            <a href="Noah-Al-Hadidi-Resume-Jul-2024-int.docx" download>Download Resume</a>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <li>CPACC - Certified Professional in Accessibility Core Competencies</li>
+                <li>WAS - Web Accessibility Specialist</li>
+                <li>CPWA - Certified Professional in Web Accessibility</li>
+                <li>JAWS & NVDA Certified</li>
+                <li>Grade 1-2 Braille in English & Arabic</li>
+            </ul>
+        </section>
+
+        <section id="audits">
+            <h2>Accessibility Audits & Case Studies</h2>
+            <ul>
+                <li><a href="audit-case-spectrum.html">Spectrum TC Accessibility Audit</a></li>
+                <li><a href="audit-case-enterprise.html">Enterprise Software Accessibility Audit</a></li>
+                <li><a href="audit-case-zip.html">ZIP Pages Website Accessibility Audit</a></li>
+            </ul>
+        </section>
+
+        <section id="media">
+            <h2>Media & Recognition</h2>
+            <ul>
+                <li><a href="https://international.colostate.edu/profile/noah-al-hadidi/" target="_blank">CSU Feature</a></li>
+                <li><a href="https://source.colostate.edu/far-sighted-blind-student-noah-al-hadidi-earns-second-csu-degree/" target="_blank">CSU News Article</a></li>
+                <li><a href="https://youtu.be/F8VQ8w606pY" target="_blank">Noah’s YouTube Interview</a></li>
+                <li><a href="https://www.orcam.com/en/blog/optical-character-recognition-system-in-college-noah-al-hadidi/" target="_blank">Orcam Blog Feature</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Noah Al Hadidi. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

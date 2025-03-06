@@ -1,8 +1,45 @@
 document.addEventListener("DOMContentLoaded", function () {
-    generateCaptcha();
-    loadDarkMode();
+    loadHeaderFooter(); // Load the global header and footer
+    generateCaptcha(); // Keep existing CAPTCHA functionality
+    loadDarkMode(); // Keep Dark Mode handling
 });
 
+// Function to load the global header and footer
+function loadHeaderFooter() {
+    fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML("afterbegin", data);
+        });
+
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML("beforeend", data);
+        });
+}
+
+// Function to toggle Dark Mode
+function toggleDarkMode() {
+    let body = document.body;
+    body.classList.toggle("dark-mode");
+
+    // Store the user's preference in localStorage
+    if (body.classList.contains("dark-mode")) {
+        localStorage.setItem("dark-mode", "enabled");
+    } else {
+        localStorage.setItem("dark-mode", "disabled");
+    }
+}
+
+// Function to load Dark Mode preference
+function loadDarkMode() {
+    if (localStorage.getItem("dark-mode") === "enabled") {
+        document.body.classList.add("dark-mode");
+    }
+}
+
+// Function to generate accessible CAPTCHA
 function generateCaptcha() {
     let num1 = Math.floor(Math.random() * 10) + 1; // Random number 1-10
     let num2 = Math.floor(Math.random() * 10) + 1; // Random number 1-10
@@ -33,6 +70,7 @@ function generateCaptcha() {
     document.getElementById("captcha-answer").value = answer; // Store correct answer securely
 }
 
+// Function to validate CAPTCHA before form submission
 function validateCaptcha() {
     let userAnswer = document.getElementById("captcha").value.trim();
     let correctAnswer = document.getElementById("captcha-answer").value.trim();

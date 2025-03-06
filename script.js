@@ -1,21 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
-    loadHeaderFooter(); // Load the global header and footer
-    generateCaptcha(); // Keep existing CAPTCHA functionality
-    loadDarkMode(); // Keep Dark Mode handling
+    loadHeaderFooter();
+    generateCaptcha();
+    loadDarkMode();
 });
 
-// Function to load the global header and footer
 function loadHeaderFooter() {
     fetch("header.html")
         .then(response => response.text())
         .then(data => {
-            document.body.insertAdjacentHTML("afterbegin", data);
+            document.body.insertAdjacentHTML("afterbegin", data); // Insert at the very top
         });
 
     fetch("footer.html")
         .then(response => response.text())
         .then(data => {
-            document.body.insertAdjacentHTML("beforeend", data);
+            document.body.insertAdjacentHTML("beforeend", data); // Insert at the very bottom
         });
 }
 

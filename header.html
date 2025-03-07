@@ -2,8 +2,15 @@
     <a href="#main-content" class="skip-link">Skip to Main Content</a>
     <button id="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
     <img src="logo.png" alt="Noah Al Hadidi - Accessibility Expert Logo" class="site-logo">
-
-    <nav>
+    <!-- Language Switcher in Its Own ARIA Region -->
+    <nav aria-label="Language Selection">
+        <ul>
+            <li><a href="index.html" lang="en">English</a></li>
+            <li><a href="index-ar.html" lang="ar">العربية</a></li>
+        </ul>
+    </nav>
+        <!-- Main Navigation -->
+    <nav aria-label="Main Navigation">
         <ul>
             <li><a href="index.html" lang="en">English</a></li>
             <li><a href="index-ar.html" lang="ar">العربية</a></li>

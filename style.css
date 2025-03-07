@@ -27,6 +27,20 @@ nav a {
 nav a:hover {
     text-decoration: underline;
 }
+/* Logo Styling */
+.site-logo {
+    display: block;
+    margin: 10px auto;
+    max-width: 150px;
+}
+
+/* Profile Picture Styling */
+.profile-pic {
+    display: block;
+    margin: 20px auto;
+    max-width: 200px;
+    border-radius: 50%;
+}
 
 /* === Skip Link Styling === */
 .skip-link {

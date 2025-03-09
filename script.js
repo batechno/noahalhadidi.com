@@ -37,6 +37,17 @@ function loadDarkMode() {
         document.body.classList.add("dark-mode");
     }
 }
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+        link.setAttribute("aria-label", link.textContent + " (opens in a new tab)");
+
+        // Optionally, append visual indicator
+        let span = document.createElement("span");
+        span.textContent = " (opens in a new tab)";
+        span.classList.add("sr-only"); // Hide visually but readable by screen readers
+        link.appendChild(span);
+    });
+});
 
 // Function to generate accessible CAPTCHA
 function generateCaptcha() {

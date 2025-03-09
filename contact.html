@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Noah Al Hadidi</title>
+    <title>Contact Me</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+        <script src="script.js" defer></script>
 </head>
 <body>
-    
     <main>
-        <h1>Contact me</h1></h1>
-        <form name="contact" method="POST" data-netlify="true" onsubmit="return validateCaptcha();">
+        <h1>Contact Me</h1>
+        <p>You can reach out to me using the form below.</p>
+
+        <form action="#" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -19,20 +20,14 @@
             <input type="email" id="email" name="email" required>
 
             <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
+            <textarea id="message" name="message" rows="4" required></textarea>
 
-            <!-- CAPTCHA -->
-            <label for="captcha">Solve: <span id="captcha-question"></span></label>
-            <input type="number" id="captcha" name="captcha" required>
-            <input type="hidden" id="captcha-answer">
+            <label for="captcha">Solve this math problem:</label>
+            <span id="captcha-question">3 + 2 = ?</span>
+            <input type="number" id="captcha" name="captcha" aria-labelledby="captcha-question" required>
 
-            <button type="submit">Send Message</button>
+            <button type="submit">Send</button>
         </form>
-
-        <!-- Confirmation Message -->
-        <p id="confirmation-message" style="display: none; color: green; font-weight: bold;">
-            ✅ Your message has been sent successfully!
-        </p>
     </main>
 </body>
 </html>

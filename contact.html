@@ -13,6 +13,16 @@
         <p>You can reach out to me using the form below.</p>
 
         <form name="contact" method="POST" data-netlify="true">
+              data-netlify-recaptcha="true"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  data-netlify="true"
+>
+  <p class="hidden">
+    <label>
+      Don’t fill this out if you’re human: <input name="bot-field" />
+    </label>
+  </p>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -21,11 +31,6 @@
 
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
-
-            <label for="captcha">Solve this math problem:</label>
-            <span id="captcha-question">3 + 2 = ?</span>
-            <input type="number" id="captcha" name="captcha" aria-labelledby="captcha-question" required>
-
             <button type="submit">Send</button>
         </form>
     </main>

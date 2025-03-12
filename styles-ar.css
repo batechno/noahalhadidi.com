@@ -1,0 +1,37 @@
+/* === Global Styles (RTL) === */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #333;
+    direction: rtl;
+    text-align: right;
+}
+
+/* === Navigation Styling (RTL) === */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 15px; /* Adjusted for RTL */
+    margin-right: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #0073e6;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* === Logo Styling === */
+.site-logo {
+    display: block;
+    margin: 10px

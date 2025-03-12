@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>اتصل بي</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles-ar.css">
+    <script src="script-ar.js" defer></script>
 </head>
 <body>
+
+    <!-- Load Arabic Header -->
+    <div id="global-header"></div>
+
     <main>
         <h1>اتصل بي</h1>
         <p>يمكنك التواصل معي عبر النموذج التالي.</p>
@@ -16,9 +20,8 @@
             
             <!-- حقل مخفي لمنع البريد العشوائي -->
             <p class="hidden">
-                <label> لا تملأ هذا الحقل إذا كنت إنسانًا: 
-                    <input name="bot-field" />
-                </label>
+                <label for="bot-field">لا تملأ هذا الحقل إذا كنت إنسانًا:</label>
+                <input type="text" id="bot-field" name="bot-field">
             </p>
 
             <label for="name">الاسم:</label>
@@ -36,5 +39,9 @@
             <button type="submit">إرسال</button>
         </form>
     </main>
+
+    <!-- Load Arabic Footer -->
+    <div id="global-footer"></div>
+
 </body>
 </html>

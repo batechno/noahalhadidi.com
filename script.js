@@ -1,9 +1,16 @@
-let correctCaptchaAnswer; // Store CAPTCHA answer securely
+let correctCaptchaAnswer; // Store the CAPTCHA answer securely
 
 document.addEventListener("DOMContentLoaded", function () {
     loadHeaderFooter();
     generateCaptcha();
     loadDarkMode();
+
+    // Attach event listener to the form
+    document.querySelector("form").addEventListener("submit", function (event) {
+        if (!validateCaptcha()) {
+            event.preventDefault(); // Stop form submission if CAPTCHA is wrong
+        }
+    });
 });
 
 // Load header and footer dynamically
@@ -76,19 +83,18 @@ function generateCaptcha() {
     document.getElementById("captcha-question").setAttribute("aria-label", ariaLabel);
 }
 
-// Validate CAPTCHA
-function validateCaptcha(event) {
-    event.preventDefault(); // Prevent form submission initially
-
+// Validate CAPTCHA before form submission
+function validateCaptcha() {
     let userAnswer = document.getElementById("captcha").value.trim();
 
     if (userAnswer === "" || isNaN(userAnswer) || parseInt(userAnswer) !== correctCaptchaAnswer) {
         alert("Incorrect CAPTCHA. Please try again.");
-        generateCaptcha();
+        generateCaptcha(); // Generate a new CAPTCHA on failure
         return false;
     }
 
-    // Show confirmation message and submit the form
+    // Show confirmation message if needed
     document.getElementById("confirmation-message").style.display = "block";
-    event.target.submit(); // Only submit if CAPTCHA is correct
+
+    return true; // Allows form submission
 }
